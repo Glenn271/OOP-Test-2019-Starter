@@ -24,10 +24,16 @@ public class Colour extends PApplet
 
     }
 
-    public toString()
+    public Colour(TableRow tr)
+    {
+
+    }
+
+   /* public toString()
     {
         
     }
+    */
 
     /**
      * @return the r
