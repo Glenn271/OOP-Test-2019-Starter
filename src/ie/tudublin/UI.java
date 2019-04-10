@@ -1,3 +1,7 @@
+//C17390923 - STUDENT NUM
+//NAME - GLENN MOORE
+//OOP SEM 2 LAB TEST 10TH APRIL 
+
 package ie.tudublin;
 
 import java.util.ArrayList;
@@ -38,18 +42,10 @@ public class UI extends PApplet
 	{
 		Table table;
 
-		table = loadTable("colours.csv","header");
+		table = loadTable("resistors.csv","header");
 
 		for (TableRow row : table.rows())
 		{
-			
-			String colour = row.getString("colour");
-			int r = row.getInt("r");
-			int g = row.getInt("g");
-			int b = row.getInt("b");
-			int value = row.getInt("value");
-			
-
 			Resistor rn = new Resistor(row);
 			resistors.add(rn);
 		}
@@ -104,18 +100,19 @@ public class UI extends PApplet
 	{
 		background(100,100,100);
 		stroke(0);
-		noFill();
+		
 		for (int i = 0; i <=3; i++){
+			noFill();
 			rect(x,y+(150*i),w,h);
 			textAlign(RIGHT,CENTER);
 			
 			//text(resistors.get(i), width - gap, y +(150*i));
-
+			//seperate(resistors.get(i));
 			for (int j = 1; j <= 3; j++) {
-			fill(r,g,b);
-			rect(x+(rectWidth*j),y+(150*i),rectWidth,h);
+			fill(255,0,0);
+			rect(x+(rectWidth*j*2),y+(150*i),rectWidth,h);
 
-			line(x-lineSize, y - lineSize, x, y-lineSize); 
+			line(x, y - lineSize, x+lineSize, y-lineSize); 
 			} 
 		}
 		

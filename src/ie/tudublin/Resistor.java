@@ -1,3 +1,7 @@
+//C17390923 - STUDENT NUM
+//NAME - GLENN MOORE
+//OOP SEM 2 LAB TEST 10TH APRIL 
+
 package ie.tudublin;
 
 import java.util.ArrayList;
@@ -25,6 +29,6 @@ public class Resistor extends PApplet
 
     public Resistor(TableRow tr)
     {
-        
+
     }
 }
