@@ -42,16 +42,16 @@ public class UI extends PApplet
 
 		for (TableRow row : table.rows())
 		{
-			/*
+			
 			String colour = row.getString("colour");
 			int r = row.getInt("r");
 			int g = row.getInt("g");
 			int b = row.getInt("b");
 			int value = row.getInt("value");
-			*/
+			
 
-			Resistor r = new Resistor(row);
-			resistors.add(r);
+			Resistor rn = new Resistor(row);
+			resistors.add(rn);
 		}
 
 	}
@@ -107,11 +107,16 @@ public class UI extends PApplet
 		noFill();
 		for (int i = 0; i <=3; i++){
 			rect(x,y+(150*i),w,h);
+			textAlign(RIGHT,CENTER);
 			
-			for (int j = 1; j <= 3; j++)
+			//text(resistors.get(i), width - gap, y +(150*i));
+
+			for (int j = 1; j <= 3; j++) {
+			fill(r,g,b);
 			rect(x+(rectWidth*j),y+(150*i),rectWidth,h);
 
-			line(x-lineSize, y - lineSize, x, y-lineSize);  
+			line(x-lineSize, y - lineSize, x, y-lineSize); 
+			} 
 		}
 		
 	}
