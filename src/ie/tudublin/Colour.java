@@ -26,7 +26,7 @@ public class Colour extends PApplet
 
     public Colour(TableRow tr)
     {
-
+        
     }
 
    /* public toString()

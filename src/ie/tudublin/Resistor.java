@@ -22,4 +22,9 @@ public class Resistor extends PApplet
         print(tens + ",");
         println(ones);
     }
+
+    public Resistor(TableRow tr)
+    {
+        
+    }
 }

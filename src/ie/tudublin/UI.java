@@ -34,6 +34,28 @@ public class UI extends PApplet
 		printColours();
 	}
 
+	public void loadResistors()
+	{
+		Table table;
+
+		table = loadTable("colours.csv","header");
+
+		for (TableRow row : table.rows())
+		{
+			/*
+			String colour = row.getString("colour");
+			int r = row.getInt("r");
+			int g = row.getInt("g");
+			int b = row.getInt("b");
+			int value = row.getInt("value");
+			*/
+
+			Resistor r = new Resistor(row);
+			resistors.add(r);
+		}
+
+	}
+
 	public void printColours()
 	{
 		for (int i = 0; i < colours.size(); i++)
@@ -69,7 +91,33 @@ public class UI extends PApplet
 		loadColours();
 	}
 	
+	float gap = width * 0.125f;
+	float x = (width/2) - gap;
+	float y = (height/2) -gap;
+	float w = 100;
+	float h = 100;
+	float lineSize = 50;
+	float rectWidth = 10;
+	
+
+	public void renderR()
+	{
+		background(100,100,100);
+		stroke(0);
+		noFill();
+		for (int i = 0; i <=3; i++){
+			rect(x,y+(150*i),w,h);
+			
+			for (int j = 1; j <= 3; j++)
+			rect(x+(rectWidth*j),y+(150*i),rectWidth,h);
+
+			line(x-lineSize, y - lineSize, x, y-lineSize);  
+		}
+		
+	}
+	
 	public void draw()
-	{			
+	{		
+		renderR();			
 	}
 }
