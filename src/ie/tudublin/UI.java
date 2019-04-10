@@ -10,6 +10,17 @@ public class UI extends PApplet
 
 {	
 	ArrayList<Colour> colours = new ArrayList<Colour>();
+
+	public void loadColours() {
+		Table table = new Table(loadTable("colours.csv","header"));
+
+		for (TableRow row : table.rows())
+		{
+			Colour c = new Colour(row);
+			colours.add(c);
+		}
+	}
+	
 	public void separate(int value)
 	{
 		int hundreds = (value / 100);

@@ -24,7 +24,7 @@ public class Colour extends PApplet
 
     }
 
-    public void toString()
+    public toString()
     {
         
     }
